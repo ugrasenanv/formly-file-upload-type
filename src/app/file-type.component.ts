@@ -6,14 +6,6 @@ import { FieldType } from '@ngx-formly/core';
   selector: 'formly-field-file',
   template: `
     <div class="upload-wrapper">
-      <div class="file-container">
-        <div class="file" *ngFor="let file of selectedFiles; let i = index">
-          <ng-container>
-            {{ getSanitizedUrl(file) }}
-          </ng-container>
-          <span (click)="onDelete(i)">X</span>
-        </div>
-      </div>
       <div class="upload-container" (click)="openFileInput()">
         <div class="mask"></div>
         <div class="helper-text">
@@ -34,6 +26,14 @@ import { FieldType } from '@ngx-formly/core';
           accept=".json"
           style="display: none"
         />
+      </div>
+      <div class="file-container">
+        <div class="file" *ngFor="let file of selectedFiles; let i = index">
+          <ng-container>
+            {{ getSanitizedUrl(file) }}
+          </ng-container>
+          <span (click)="onDelete(i)">X</span>
+        </div>
       </div>
     </div>
   `,

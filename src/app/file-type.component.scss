@@ -1,6 +1,8 @@
 .upload-wrapper {
   padding-bottom: 1.25em;
+  
   .upload-container {
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -49,6 +51,7 @@
     }
   }
   .file-container {
+    
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -92,4 +95,5 @@
   .underline-red {
     color: red;
   }
+  
 }
