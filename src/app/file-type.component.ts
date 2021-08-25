@@ -17,7 +17,7 @@ import { FieldType } from '@ngx-formly/core';
         <div class="helper-text">
           <div class="absolute-div">
             <div>
-              Upload i
+              Upload JSON file
             </div>
           </div>
         </div>
