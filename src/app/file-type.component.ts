@@ -8,7 +8,9 @@ import { FieldType } from '@ngx-formly/core';
     <div class="upload-wrapper">
       <div class="file-container">
         <div class="file" *ngFor="let file of selectedFiles; let i = index">
-          <img [src]="getSanitizedImageUrl(file)" />
+          <ng-container>
+            {{ getSanitizedUrl(file) }}
+          </ng-container>
           <span (click)="onDelete(i)">X</span>
         </div>
       </div>
@@ -59,7 +61,7 @@ export class FormlyFieldFile extends FieldType implements OnInit {
     this.selectedFiles = Array.from(event.target.files);
     console.log(this.selectedFiles);
   }
-  getSanitizedImageUrl(file: File) {
+  getSanitizedUrl(file: File) {
     return this.sanitizer.bypassSecurityTrustUrl(
       window.URL.createObjectURL(file)
     );
@@ -68,7 +70,3 @@ export class FormlyFieldFile extends FieldType implements OnInit {
     return /^image\//.test(file.type);
   }
 }
-
-/**  Copyright 2018 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */
